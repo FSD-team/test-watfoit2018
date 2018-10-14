@@ -58,6 +58,10 @@ contract Playlist {
         Song storage song = songs[index];
         return song.voteCount;
     }
+    function getSongDescription(uint index) public view returns (string) {
+        Song storage song = songs[index];
+        return song.description;
+    }
     function isSongCompleted(uint index) public view returns (bool) {
         Song storage song = songs[index];
         return song.complete;
