@@ -34,7 +34,7 @@ contract Playlist {
     function closeVoting(uint index) public {
         Song storage song = songs[index];
 
-        //require(!song.complete);
+        require(!song.complete);
 
         song.complete = true;
     }
