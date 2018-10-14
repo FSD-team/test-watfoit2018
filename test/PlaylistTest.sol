@@ -12,7 +12,7 @@ contract PlaylistTest {
         playlist = new Playlist();
 
         playlist.addSong("Tets", "Test", 10);
-        playlist.addSong("Tets2", "Test2", 10);
+        playlist.addSong("Tets", "Test", 10);
     }
 
     function testVote() public {
