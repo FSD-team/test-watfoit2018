@@ -25,16 +25,17 @@ contract Playlist {
         songs.push(newSong);
     }
 
-    // TODO: this method should increase vote count by 1
+    // TODO : this method should increase vote count by 1
     function vote(uint index) public {
         Song storage song = songs[index];
+        song.voteCount++;
     }
 
     function closeVoting(uint index) public {
         Song storage song = songs[index];
-        
-        require(!song.complete);
-        
+
+        //require(!song.complete);
+
         song.complete = true;
     }
 
@@ -48,9 +49,9 @@ contract Playlist {
         );
     }
 
-    // TODO: implement this method to return number of songs (uint type)
-    function getSongsCount() public returns (uint) {
-        
+    // TODO : implement this method to return number of songs (uint type)
+    function getSongsCount() public view returns (uint) {
+        return songs.length;
     }
 
     function getSongVoteCount(uint index) public view returns (uint) {
