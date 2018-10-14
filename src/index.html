@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" script-src='unsafe-inline';>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Playlist</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <div style="padding: 20px">
+          <div class="row jumbotron" style="max-width: 1000px; float: none; margin: 0 auto; text-align: center;">
+              <h4>
+                  <button class="btn btn-default songsNumber" type="button" data-id="0">Get number of songs</button>
+              </h4>            
+      </div>
+      </div>
+      <div style="padding: 20px">
+          <div class="row jumbotron" style="max-width: 1000px; float: none; margin: 0 auto; text-align: center;">
+              <h4>
+                  <span>Add new song</span>
+              </h4>
+              <hr/>
+              <form id="addRestaurantForm" style="text-align: left">
+                  <div class="row"> 
+                      <div class="col-sm-4">
+                          <label class="control-label" for="url">Url:</label>
+                          <div class="input-group">              
+                             <input type="text" name="url" placeholder="Url" class="form-control" /> 
+                          </div>                                
+                      </div> 
+                      <div class="col-sm-4">
+                          <label class="control-label" for="value">Value:</label>
+                          <div class="input-group">              
+                             <input type="text" name="value" placeholder="Value of song" class="form-control" /> 
+                          </div>                                
+                      </div>
+                      <div class="col-sm-4">
+                          <label class="control-label" for="description">Description:</label>
+                          <div class="input-group">              
+                             <input type="text" name="description" placeholder="Enter text here..." class="form-control" /> 
+                          </div>                                
+                      </div>  
+                      <div class="col-sm-12">
+                          <div class="form-group" style="margin-top:10px">
+                              <button type="submit" name="addSong" class="btn btn-primary addSong">
+                              <span class="glyphicon glyphicon-plus-sign" style="margin-right: 10px;"></span>Add song
+                              </button>
+                          </div>
+                      </div>                  
+                  </div>
+                </div>
+              </form>
+          </div>
+      </div>
+      </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Songs</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+      <div id="songsRow" class="row">
+        <!-- SONGS LOAD HERE -->
+      </div>
+    </div>
+
+    <div id="songTemplate" style="display: none;">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default panel-pet">
+          <div class="panel-heading">
+            <h3 class="panel-title">Song</h3>
+          </div>
+          <div class="panel-body"> 
+            <strong>Description</strong>: <span class="description">0</span><br/>
+            <strong>Url</strong>: <span class="url">0</span><br/>
+            <strong>Votes</strong>: <span class="votes">0</span><br/>
+            <strong>Complete</strong>: <span class="complete">false</span><br/>
+            <strong>Value</strong>: <span class="value">0</span><br/><br/>
+            <button class="btn btn-default btn-vote" type="button" data-id="0">Vote</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
