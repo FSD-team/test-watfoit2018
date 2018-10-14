@@ -5,6 +5,9 @@ contract Playlist {
         string description;
         string url;
         uint value;
+        // dodato
+        uint voteCount;
+        bool complete;
     }
 
     Song[] public songs;
@@ -26,6 +29,9 @@ contract Playlist {
     // TODO: this method should increase vote count by 1
     function vote(uint index) public {
         Song storage song = songs[index];
+
+        //dodato
+        song.voteCount++;
     }
 
     function closeVoting(uint index) public {
@@ -47,8 +53,9 @@ contract Playlist {
     }
 
     // TODO: implement this method to return number of songs (uint type)
-    function getSongsCount() public returns () {
-        
+    // dodato
+    function getSongsCount() public view returns (uint) {
+        return songs.length;
     }
 
     function getSongVoteCount(uint index) public view returns (uint) {
