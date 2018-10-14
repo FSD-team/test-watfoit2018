@@ -5,6 +5,8 @@ contract Playlist {
         string description;
         string url;
         uint value;
+        uint voteCount;
+        bool complete;
     }
 
     Song[] public songs;
@@ -47,7 +49,7 @@ contract Playlist {
     }
 
     // TODO: implement this method to return number of songs (uint type)
-    function getSongsCount() public returns () {
+    function getSongsCount() public returns (uint) {
         
     }
 
