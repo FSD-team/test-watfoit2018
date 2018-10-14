@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Music Playlist</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Muzička plejlista</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Dodavanje pesme</h3>
+  </div>
+  <div class="panel-body">
+    <input type="text" class="form-control" id="song-name" placeholder="Naziv pesme">
+    <br/>
+    <input type="text" class="form-control" id="song-url" placeholder="Url">
+    <br/>
+    <button class="btn btn-default" id="btn-addsong" type="button">Dodaj pesmu</button>
+
+    <br />
+    <h4>Broj pesama: <span id="song-num">0</span></h4>
+
+  </div>
+  </div>
+
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Dobavi informacije</h3>
+  </div>
+  <div class="panel-body">
+    <input type="text" class="form-control" id="song-broj" placeholder="Redni broj pesme">
+    <br/>
+    <button class="btn btn-default" id="btn-getinfo" type="button">Dobavi</button>
+    <br />
+      <h5><strong>Ime pesme:</strong> <span id="info-ime"></span></h5>
+      <h5><strong>Url:</strong> <span id="info-url"></span></h5>
+  </div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
