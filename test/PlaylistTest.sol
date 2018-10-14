@@ -11,8 +11,8 @@ contract PlaylistTest {
     constructor() public {
         playlist = new Playlist();
 
-        playlist.addSong("Tets", "Test", 10);
-        playlist.addSong("Tets2", "Test2", 10);
+        playlist.addSong("Tets", "Test");
+        playlist.addSong("Tets2", "Test2");
     }
 
     function testVote() public {
