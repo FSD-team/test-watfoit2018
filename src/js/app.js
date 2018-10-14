@@ -38,6 +38,7 @@ App = {
     App.getSongsCount();
     $(document).on('click', '#btnAddSong', App.addSong);
     $(document).on('click', '#btnGetDescription', App.getSongDescription);
+    $(document).on('click', '#btnVoteSong', App.voteForSong);
   },
 
   getSongsCount: function(event) {
@@ -74,6 +75,28 @@ App = {
         playlistInstance = instance;
         playlistInstance.getSongDescription(id).then(function(result){
           alert("Description:" + result);
+        });
+      });
+    });
+  },
+
+  voteForSong: function(event) {
+
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
+
+      var account = accounts[0];
+
+      var id = $("#vote-song-id").val();
+
+      App.contracts.Playlist.deployed().then(function(instance) {
+        playlistInstance = instance;
+        playlistInstance.vote(id).then(function(instance) {
+          playlistInstance.getSongVoteCount(id).then(function(result){
+            alert("Total votes:" + result);
+          });
         });
       });
     });
